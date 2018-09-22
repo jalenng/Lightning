@@ -10,6 +10,7 @@ PImage img;
 void setup()
 {
   size(500, 500);
+  frameRate(30);
   background(0);
   img = loadImage("superren.png");
   initVars();
@@ -31,7 +32,7 @@ void initVars()
 }
 void draw()
 {
-	fill(0, 0, 0, 50);
+	fill(0, 0, 0, 40);
 	rect(0, 0, width, height);
 	image(img, width / 3 * 2, height / 3 * 2, width / 3, height / 3);
 	if ((Math.random() * 10) < 1) {
