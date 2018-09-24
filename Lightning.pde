@@ -10,7 +10,7 @@ PImage img;
 void setup()
 {
   size(500, 500);
-  frameRate(30);
+  frameRate(1);
   background(0);
   img = loadImage("superren.png");
   initVars();
@@ -52,7 +52,7 @@ void drawLightning()
 }
 void drawSegments(int sX, int sY, int eX, int eY)
 {
-	int temporaryBrightness = lightningBrightness - 100;
+	int temporaryBrightness = lightningBrightness - 75;
 	for(int i = temporaryBrightness; i > 0; i -= lightningWidth)
 	{
 		strokeWeight(lightningWidth);
