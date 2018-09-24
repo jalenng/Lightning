@@ -17,25 +17,20 @@ void setup()
 }
 void initVars()
 {
-	/*
-	 * startX = (int)(Math.random() * width);
-	 * startY = 0;
-	 * endX = startX;
-	 * endY = 0;
-	 */
-	 startX = (width / 9 * 7);
-	 startY = height / 30 * 21;
-	 endX = startX;
-	 endY = startY;
+	startX = width / 9 * 7;
+	startY = height / 30 * 21;
+	endX = startX;
+	endY = startY;
 	lightningWidth = (int)(Math.random() * 15);
-	lightningBrightness = randomInt(155, 255);
+	lightningBrightness = (int)(Math.random() * 100) + 155;
 }
 void draw()
 {
 	fill(0, 0, 0, 40);
 	rect(0, 0, width, height);
 	image(img, width / 3 * 2, height / 3 * 2, width / 3, height / 3);
-	if ((Math.random() * 10) < 1) {
+	if ((Math.random() * 10) < 1)
+	{
 		drawLightning();
 	}
 }
@@ -73,9 +68,4 @@ void drawSegments(int sX, int sY, int eX, int eY)
 		line(sX, sY + distance, eX, eY + distance);
 		line(sX, sY - distance, eX, eY - distance);
 	}
-}
-int randomInt(int min, int max)
-{
-	int difference = max - min + 1;
-	return (int)(Math.random() * difference) + min;
 }
