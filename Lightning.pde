@@ -10,13 +10,19 @@ PImage img;
 void setup()
 {
   size(500, 500);
-  frameRate(1);
+  frameRate(30);
   background(0);
   img = loadImage("superren.png");
   initVars();
 }
 void initVars()
 {
+	/*
+	 * startX = (int)(Math.random() * width);
+	 * startY = 0;
+	 * endX = startX;
+	 * endY = 0;
+	 */
 	 startX = (width / 9 * 7);
 	 startY = height / 30 * 21;
 	 endX = startX;
@@ -42,6 +48,10 @@ void drawLightning()
 	initVars();
 	while (lightningWidth > 0)
 	{
+		/*
+		 * endX = startX + (int)(Math.random() * (width / 5) - (width / 10));
+		 * endY = startY + (int)(Math.random() * (height / 5));
+		 */
 		endX = startX - (int)(Math.random() * (width / 5));
 		endY = startY + (int)(Math.random() * (height / 5) - (height / 10));
 		drawSegments(startX, startY, endX, endY);
@@ -52,7 +62,7 @@ void drawLightning()
 }
 void drawSegments(int sX, int sY, int eX, int eY)
 {
-	int temporaryBrightness = lightningBrightness - 75;
+	int temporaryBrightness = lightningBrightness - 80;
 	for(int i = temporaryBrightness; i > 0; i -= lightningWidth)
 	{
 		strokeWeight(lightningWidth);
@@ -63,7 +73,6 @@ void drawSegments(int sX, int sY, int eX, int eY)
 		line(sX, sY + distance, eX, eY + distance);
 		line(sX, sY - distance, eX, eY - distance);
 	}
-	println("boom");
 }
 int randomInt(int min, int max)
 {
