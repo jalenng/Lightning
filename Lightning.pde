@@ -9,7 +9,7 @@ PImage img;
 
 void setup()
 {
-  size(500, 500);
+  size(1000, 1000);
   frameRate(30);
   background(0);
   img = loadImage("superren.png");
@@ -62,7 +62,8 @@ void drawLightning()
 }
 void drawSegments(int sX, int sY, int eX, int eY)
 {
-	int temporaryBrightness = lightningBrightness - 80;
+	/*
+	int temporaryBrightness = lightningBrightness - 100;
 	for(int i = temporaryBrightness; i > 0; i -= lightningWidth)
 	{
 		strokeWeight(lightningWidth);
@@ -73,6 +74,8 @@ void drawSegments(int sX, int sY, int eX, int eY)
 		line(sX, sY + distance, eX, eY + distance);
 		line(sX, sY - distance, eX, eY - distance);
 	}
+	*/
+	line(sX, sY, eX, eY);
 }
 int randomInt(int min, int max)
 {
