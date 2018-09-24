@@ -17,12 +17,6 @@ void setup()
 }
 void initVars()
 {
-	/*
-	 * startX = (int)(Math.random() * width);
-	 * startY = 0;
-	 * endX = startX;
-	 * endY = 0;
-	 */
 	 startX = (width / 9 * 7);
 	 startY = height / 30 * 21;
 	 endX = startX;
@@ -45,17 +39,16 @@ void mousePressed()
 }
 void drawLightning()
 {
+	initVars();
 	while (lightningWidth > 0)
 	{
 		endX = startX - (int)(Math.random() * (width / 5));
 		endY = startY + (int)(Math.random() * (height / 5) - (height / 10));
-		line(startX, startY, endX, endY);
-		//drawSegments(startX, startY, endX, endY);
+		drawSegments(startX, startY, endX, endY);
 		startX = endX;
 		startY = endY;
 		lightningWidth -= 0.1;
 	}
-	initVars();
 }
 void drawSegments(int sX, int sY, int eX, int eY)
 {
@@ -70,6 +63,7 @@ void drawSegments(int sX, int sY, int eX, int eY)
 		line(sX, sY + distance, eX, eY + distance);
 		line(sX, sY - distance, eX, eY - distance);
 	}
+	println("boom");
 }
 int randomInt(int min, int max)
 {
