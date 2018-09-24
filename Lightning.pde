@@ -45,7 +45,6 @@ void mousePressed()
 }
 void drawLightning()
 {
-	initVars();
 	while (lightningWidth > 0)
 	{
 		endX = startX - (int)(Math.random() * (width / 5));
@@ -56,6 +55,7 @@ void drawLightning()
 		startY = endY;
 		lightningWidth -= 0.1;
 	}
+	initVars();
 }
 void drawSegments(int sX, int sY, int eX, int eY)
 {
