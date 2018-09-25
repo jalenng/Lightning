@@ -58,13 +58,14 @@ void drawLightning()
 void drawSegments(int sX, int sY, int eX, int eY)
 {
 	int temporaryBrightness = lightningBrightness - 80;
-	for(int i = temporaryBrightness; i > 0; i -= lightningWidth)
+	for(int i = temporaryBrightness; i > 0; i -= lightningWidth + 1)
 	{
-		strokeWeight(lightningWidth);
 		int ratio = (i / temporaryBrightness);
 		stroke(255, 255, 255, i);
 		int distance = (temporaryBrightness - i);
+		strokeWeight(lightningWidth);
 		line(sX, sY, eX, eY);
+		strokeWeight(lightningWidth + 1);
 		line(sX, sY + distance, eX, eY + distance);
 		line(sX, sY - distance, eX, eY - distance);
 	}
